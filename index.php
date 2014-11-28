@@ -23,7 +23,8 @@
     </script>
 
     <script type="text/javascript">
-        
+        var map;
+
 
        function inicializar(locacion)
        {
@@ -38,7 +39,7 @@
                mapTypeId: google.maps.MapTypeId.ROADMAP
             }
 
-           var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+            map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
 
           /*           PONER MARCADORES             */
@@ -52,7 +53,7 @@
            animation: google.maps.Animation.DROP
          });    
   
-      
+      /*              MOSTRAR MENSAJE AL HACER CLIK EN EL MARKER*/
            var informacion = new google.maps.InfoWindow({
                content: "aqui esta mi hogar"
            });
@@ -60,9 +61,37 @@
            google.maps.event.addListener(marker1, 'click', function() {
                informacion.open(map,marker1);
           });
+       
+       /*********************************************************/
 
+
+      /***************FUNCION QUE PERMITE CREAR MARCADORES AL HACER CLICK**********/
+         google.maps.event.addListener(map, 'click', function(event) {
+            placeMarker(event.latLng);
+            console.log(event.latLng.k);
+            console.log(event.latLng.B);
+         });
+
+       /****************************************************************************/
+
+ 
 
      } // FIN FUNCION INICIALIZAR
+
+
+  /*FUNCION QUE HACER EL MARCADOR, DONDE DIERON CLICK*/
+  function placeMarker(location) {
+  var marker2 = new google.maps.Marker({
+      position: location,
+      map: map
+  });
+}
+       
+       
+
+
+
+
 
     /*  $(document).ready(function()
       {
