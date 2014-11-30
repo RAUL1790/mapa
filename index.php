@@ -19,7 +19,7 @@
       <script src="http://maps.googleapis.com/maps/api/js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	  <script type="text/javascript" 
-           src="https://maps.googleapis.com/maps/api/js?v=3.exp">
+           src="https://maps.googleapis.com/maps/api/js">
     </script>
 
     <script type="text/javascript">
